@@ -1,0 +1,9 @@
+---
+- hosts: all
+  name: Remove line
+  tasks:
+    - name: Remove line
+      ansible.builtin.lineinfile:
+        path: /etc/systemd/system/containerd.service.d/http-proxy.conf
+        regexp: 'Environment=*'
+        state: absent
